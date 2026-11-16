@@ -1,0 +1,255 @@
+---
+name: Ludo Arena Cyber-Luxe
+colors:
+  surface: '#0f131d'
+  surface-dim: '#0f131d'
+  surface-bright: '#353944'
+  surface-container-lowest: '#0a0e18'
+  surface-container-low: '#171b26'
+  surface-container: '#1c1f2a'
+  surface-container-high: '#262a35'
+  surface-container-highest: '#313540'
+  on-surface: '#dfe2f1'
+  on-surface-variant: '#cbc3d7'
+  inverse-surface: '#dfe2f1'
+  inverse-on-surface: '#2c303b'
+  outline: '#958ea0'
+  outline-variant: '#494454'
+  surface-tint: '#d0bcff'
+  primary: '#d0bcff'
+  on-primary: '#3c0091'
+  primary-container: '#a078ff'
+  on-primary-container: '#340080'
+  inverse-primary: '#6d3bd7'
+  secondary: '#4cd7f6'
+  on-secondary: '#003640'
+  secondary-container: '#03b5d3'
+  on-secondary-container: '#00424e'
+  tertiary: '#ffb690'
+  on-tertiary: '#552100'
+  tertiary-container: '#ec6a06'
+  on-tertiary-container: '#4a1c00'
+  error: '#ffb4ab'
+  on-error: '#690005'
+  error-container: '#93000a'
+  on-error-container: '#ffdad6'
+  primary-fixed: '#e9ddff'
+  primary-fixed-dim: '#d0bcff'
+  on-primary-fixed: '#23005c'
+  on-primary-fixed-variant: '#5516be'
+  secondary-fixed: '#acedff'
+  secondary-fixed-dim: '#4cd7f6'
+  on-secondary-fixed: '#001f26'
+  on-secondary-fixed-variant: '#004e5c'
+  tertiary-fixed: '#ffdbca'
+  tertiary-fixed-dim: '#ffb690'
+  on-tertiary-fixed: '#341100'
+  on-tertiary-fixed-variant: '#783200'
+  background: '#0f131d'
+  on-background: '#dfe2f1'
+  surface-variant: '#313540'
+typography:
+  display-lg:
+    fontFamily: Outfit
+    fontSize: 48px
+    fontWeight: '800'
+    lineHeight: 56px
+    letterSpacing: -0.02em
+  display-lg-mobile:
+    fontFamily: Outfit
+    fontSize: 32px
+    fontWeight: '800'
+    lineHeight: 40px
+    letterSpacing: -0.01em
+  headline-xl:
+    fontFamily: Outfit
+    fontSize: 36px
+    fontWeight: '700'
+    lineHeight: 44px
+    letterSpacing: -0.02em
+  headline-xl-mobile:
+    fontFamily: Outfit
+    fontSize: 26px
+    fontWeight: '700'
+    lineHeight: 34px
+    letterSpacing: -0.01em
+  headline-lg:
+    fontFamily: Outfit
+    fontSize: 24px
+    fontWeight: '700'
+    lineHeight: 32px
+    letterSpacing: -0.01em
+  headline-md:
+    fontFamily: Outfit
+    fontSize: 20px
+    fontWeight: '600'
+    lineHeight: 28px
+  headline-sm:
+    fontFamily: Outfit
+    fontSize: 16px
+    fontWeight: '600'
+    lineHeight: 24px
+  body-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 18px
+    fontWeight: '400'
+    lineHeight: 28px
+  body-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 15px
+    fontWeight: '400'
+    lineHeight: 22px
+  body-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 13px
+    fontWeight: '400'
+    lineHeight: 18px
+  label-lg:
+    fontFamily: Outfit
+    fontSize: 14px
+    fontWeight: '600'
+    lineHeight: 20px
+    letterSpacing: 0.02em
+  label-md:
+    fontFamily: Outfit
+    fontSize: 12px
+    fontWeight: '700'
+    lineHeight: 16px
+    letterSpacing: 0.05em
+  label-sm:
+    fontFamily: Outfit
+    fontSize: 10px
+    fontWeight: '700'
+    lineHeight: 14px
+    letterSpacing: 0.08em
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1rem
+  gutter-md: 1.5rem
+  gutter-lg: 2rem
+  margin: 1rem
+  margin-md: 2rem
+  margin-lg: 3rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2.5rem
+---
+
+## Brand & Style
+
+This design system establishes a high-stakes, competitive online arena aesthetic for modern digital board gaming. It combines the sleek tactility of competitive esports dashboards with the physical nostalgia of classic Ludo play. The atmosphere is immersive, dark, and electric—eschewing flat minimalism in favor of rich optical depth, luminous neon accents, and responsive tactile affordances.
+
+### Key Tenets
+- **High-Stakes Vibrancy:** Dark obsidian and midnight canvas layers serve as an acoustic void, amplifying primary electric violets and radiant game-state neon tones.
+- **Glassmorphism & Tactical Depth:** Semi-translucent panels, smoked-glass overlays, and hairline specular borders deliver layered hierarchy without cluttering fast-paced gameplay.
+- **Micro-Feedback & Kinetic Energy:** Controls feature distinct depth transitions, subtle rim-lit glow states, and active pressed transformations designed for rapid tactile confidence across desktop and mobile viewports.
+- **Clarity Under Pressure:** Critical gaming states, timer indicators, and quadrant territories retain unambiguous color signifiers against ambient dark backdrops.
+
+## Colors
+
+The palette operates on a calibrated hierarchy of luminous emissive values anchored by a multi-tiered midnight blue-black base.
+
+### Functional Roles
+- **Surfaces & Canvases:**
+  - `Canvas / Deep Space`: `#0B0F19` (Foundation background)
+  - `Surface Tier 1`: `#111827` (Sidebars, global navigation, base containers)
+  - `Surface Tier 2`: `#1E293B` (Smoked cards, modal containers, interactive panels)
+  - `Surface Glass Border`: `rgba(148, 163, 184, 0.15)` with localized reactive glow highlights
+- **Brand & Action Accents:**
+  - `Primary (Electric Violet)`: `#8B5CF6` (Main CTA, active player states, level-up indicators; hover `#7C3AED`)
+  - `Secondary (Cyber Cyan)`: `#06B6D4` (Positive states, live stats, matchmaking queues; highlight `#22D3EE`)
+  - `Tertiary (Molten Amber)`: `#F97316` (Currency tokens, wager pools, jackpot counters, countdown timers; accent `#FBBF24`)
+- **Quadrant Gameplay Specifics:**
+  - `Ludo Red`: `#EF4444`
+  - `Ludo Green`: `#10B981`
+  - `Ludo Yellow`: `#F59E0B`
+  - `Ludo Blue`: `#3B82F6`
+- **Text & Readability:**
+  - `High-Emphasis / Headings`: `#FFFFFF`
+  - `Medium-Emphasis / Body`: `#E2E8F0`
+  - `Muted / Metadata / Inactive`: `#94A3B8`
+
+## Typography
+
+The type system blends the geometric punch of **Outfit** for game branding, currency values, metrics, and headings with the ergonomic clarity of **Plus Jakarta Sans** for real-time match logs, rulebooks, and settings.
+
+### Rules & Formatting
+- **Display & Headings:** Always set with tight negative letter tracking to give a unified, cinematic presence. Numerical match stats, rank badges, and victory banners use bold or extrabold Outfit (`display-lg`, `headline-xl`).
+- **Body & Data:** Keep body text at standard tracking for effortless scanning against dark backgrounds. Ensure contrast ratios exceed WCAG AAA for match-critical notifications.
+- **Labels & UI Tags:** Always render uppercase for small tier tags, rank badges, and token counters (`label-sm`, `label-md`) with elevated letter spacing for clarity at miniature sizes.
+
+## Layout & Spacing
+
+The layout is architected around an adaptive, fluid-grid chassis built to preserve square game-board proportions while managing peripheral live tournament telemetry.
+
+### Grid & Breakpoints
+- **Mobile (< 768px):** Single-column dynamic viewport (`100dvh`). Safe-area edge padding (`margin: 1rem`), fixed top player bar (tokens, notifications, avatar), central 1:1 responsive board viewport, and a fixed bottom navigation bar or action deck.
+- **Tablet (768px - 1024px):** 8-column layout with 1.5rem gutters. The board anchors centrally; player telemetry cards bracket the game area.
+- **Desktop (> 1024px):** 12-column layout with 2rem gutters, constrained to a maximum width of 1440px. The central 7 columns house the main arena/board, with 2-column left navigational deck and 3-column right live-chat, match history, and social wager feeds.
+
+### Spacing Principles
+- Dynamic components strictly respect standard 4px/8px multiples (`space-xs` through `space-xl`).
+- Inter-tile spacing on the board scale dynamically using container queries, maintaining an absolute 2px to 4px gap to avoid visual bleeding between quadrants.
+
+## Elevation & Depth
+
+Visual depth is achieved through translucent smoked-glass tiers, luminous rim lighting, and reactive neon underglow rather than muddy drop shadows.
+
+### Surface Elevation System
+- **Level 0 (Void):** Pure background canvas `#0B0F19` with subtle radial gradient mesh accents in violet and deep cyan positioned at viewport edges.
+- **Level 1 (Ground Panels):** Background `#111827` at 85% opacity, `backdrop-filter: blur(16px)`, enclosed with a crisp 1px perimeter border of `rgba(148, 163, 184, 0.12)`.
+- **Level 2 (Active Cards & Dialogs):** Background `#1E293B` at 70% opacity, `backdrop-filter: blur(24px)`. Augmented by an inner top highlight border (`rgba(255, 255, 255, 0.08)`) and an exterior ambient glow (`0 8px 32px rgba(0, 0, 0, 0.45)`).
+- **Level 3 (Emissive Floating Controls):** Active dice rollers, victory badges, and primary interactive buttons leverage dual-layer radial drop shadows: a sharp dark shadow for separation (`0 4px 12px rgba(0,0,0,0.5)`) plus a secondary colored neon aura (`0 0 24px rgba(139, 92, 246, 0.35)`).
+
+## Shapes
+
+The design system employs a geometric yet approachable corner radius profile (`roundedness: 2` = 0.5rem base) that balances tactical precision with touch-friendly accessibility.
+
+### Geometry Specifications
+- **Base Components:** Buttons, form inputs, and small badges use `0.5rem` (8px).
+- **Cards & Modals:** Large cards, arena hubs, and overlay containers scale to `rounded-lg` (1rem / 16px) or `rounded-xl` (1.5rem / 24px) for prominent floating presentation.
+- **Avatars, Dice Pips, & Pill Counters:** Pill-radius (`9999px`) is reserved exclusively for player status pills, live indicators, round counters, and token balance chips.
+- **Ludo Tokens (Pawns):** Circular, layered concentric geometries with chamfered visual ridges mimicking weighted physical casino arcade chips.
+
+## Components
+
+### Buttons & Interactive Controls
+- **Primary CTA ("Roll Dice", "Join Arena"):**
+  - Gradient background: `linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)`.
+  - Border: 1px top highlight `rgba(255, 255, 255, 0.25)`, 1px bottom `rgba(0, 0, 0, 0.3)`.
+  - Glow: Active idle glow `0 0 16px rgba(139, 92, 246, 0.4)`.
+  - Interaction: Hover intensifies cyan-violet luminescence; active/press scales down to `0.97` with an inset shadow (`inset 0 2px 4px rgba(0, 0, 0, 0.4)`).
+- **Secondary / Action ("Wager", "Pass"):**
+  - Tinted glass surface (`rgba(6, 182, 212, 0.1)`) with a vibrant cyan border (`1px solid #06B6D4`). Hover transitions to solid cyan fill with high-contrast dark text.
+- **Icon / Utility Buttons:**
+  - Square or round frosted glass containers (`#1E293B`, 60% opacity) with a muted border that turns electric violet on hover.
+
+### Smoked Glass Cards
+- Built using `backdrop-filter: blur(16px)` and background `#111827/80`.
+- Outer hairline border: `1px solid rgba(148, 163, 184, 0.15)`.
+- When highlighting an active turn or winning position, the card's border transitions to that player's quadrant color with a soft, pulsing ambient rim glow.
+
+### Chips & Currency Counters
+- **Token / Gold Balance:** Pill-shaped glass container holding a metallic coin icon, numerical value set in Outfit bold, and a high-glow amber border (`#F97316/40`).
+- **Player Level Badge:** Compact, high-contrast violet tag (`label-sm`) featuring the numerical rank surrounded by an angular metallic polygon or circular ring.
+
+### Status Indicators & Real-Time Avatars
+- **Player Avatar Pods:** Circular image enclosed in a 2px colored border matching their assigned Ludo quadrant (Red, Green, Yellow, Blue).
+- **Turn Beacon:** A revolving or pulsing orbital glow surrounding the avatar of the player whose turn is currently active.
+- **Live Dot:** 8px emerald circle (`#10B981`) with an animated concentric pulse ring indicating steady WebSocket connectivity.
+
+### Dice & Game Mechanics
+- **Dice Container:** Symmetrical rounded cube with glass-morphic sheen, tactile 3D beveled edge highlights, high-contrast pips, and responsive shake/roll physics triggers.
+- **Quadrant Base-Pads:** High-opacity tinted surfaces (`#EF4444/15`, `#10B981/15`, etc.) featuring embedded neon runes and safe-zone shield badges.
+
+### Mobile Navigation Deck & Header
+- **Top Header:** Slim smoked glass bar housing the user profile avatar, current rank badge, live token counters with "+" quick-add action, and audio/settings triggers.
+- **Bottom Navigation Deck:** Fixed glass bar with 4–5 core destinations (Arena, Tournaments, Leaderboard, Inventory, Social). Active items feature a vertical cyan indicator pill and localized glow.

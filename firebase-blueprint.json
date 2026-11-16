@@ -1,0 +1,518 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated player profile, wallet balance, stats, and equipped Armory loadout.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Firebase Auth UID of the player."
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50,
+          "description": "Player display name."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 120,
+          "description": "Verified Google account email (private to owner)."
+        },
+        "photoURL": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "Profile avatar URL."
+        },
+        "coins": {
+          "type": "integer",
+          "description": "Current wallet coin balance."
+        },
+        "bonusClaimed": {
+          "type": "boolean",
+          "description": "Whether the daily bonus has been claimed for the active date."
+        },
+        "lastBonusDate": {
+          "type": "string",
+          "maxLength": 20,
+          "description": "ISO date YYYY-MM-DD of the last daily bonus claim."
+        },
+        "elo": {
+          "type": "integer",
+          "description": "Arena ELO rating."
+        },
+        "wins": {
+          "type": "integer",
+          "description": "Total matches won."
+        },
+        "matchesPlayed": {
+          "type": "integer",
+          "description": "Total matches participated in."
+        },
+        "earnings": {
+          "type": "integer",
+          "description": "Total coins earned from victories."
+        },
+        "equippedDice": {
+          "type": "string",
+          "enum": ["obsidian-glass", "solar-amber", "cyber-prism"],
+          "maxLength": 32,
+          "description": "Currently equipped 3D dice skin ID."
+        },
+        "equippedToken": {
+          "type": "string",
+          "enum": ["arcade-chip", "carbon-ring", "royal-crown"],
+          "maxLength": 32,
+          "description": "Currently equipped token style ID."
+        },
+        "equippedBoard": {
+          "type": "string",
+          "enum": ["midnight-obsidian", "cobalt-vault", "emerald-circuit"],
+          "maxLength": 32,
+          "description": "Currently equipped board theme ID."
+        },
+        "unlockedIds": {
+          "type": "array",
+          "description": "List of unlocked Shop item IDs (max 30)."
+        },
+        "isSuspended": {
+          "type": "boolean",
+          "description": "Whether the account is suspended by a platform administrator."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server creation timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server update timestamp."
+        }
+      },
+      "required": [
+        "uid",
+        "displayName",
+        "email",
+        "photoURL",
+        "coins",
+        "bonusClaimed",
+        "lastBonusDate",
+        "elo",
+        "wins",
+        "matchesPlayed",
+        "earnings",
+        "equippedDice",
+        "equippedToken",
+        "equippedBoard",
+        "unlockedIds",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "TokenPurchaseRecord": {
+      "title": "TokenPurchaseRecord",
+      "description": "Immutable record of a token/dice/board skin unlock or coin pack acquisition.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "itemId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "itemName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "category": {
+          "type": "string",
+          "enum": ["token", "dice", "board", "coins-pack"],
+          "maxLength": 24
+        },
+        "price": {
+          "type": "integer"
+        },
+        "balanceAfter": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "itemId", "itemName", "category", "price", "balanceAfter", "createdAt"]
+    },
+    "RoomParticipationRecord": {
+      "title": "RoomParticipationRecord",
+      "description": "History of online rooms and arena matches the player participated in.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "roomCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["online", "quick-4p", "duel-2p", "pass-play"],
+          "maxLength": 20
+        },
+        "role": {
+          "type": "string",
+          "enum": ["host", "guest", "solo"],
+          "maxLength": 16
+        },
+        "myColor": {
+          "type": "string",
+          "enum": ["red", "green", "yellow", "blue"],
+          "maxLength": 12
+        },
+        "stake": {
+          "type": "integer"
+        },
+        "wagerPot": {
+          "type": "integer"
+        },
+        "outcome": {
+          "type": "string",
+          "enum": ["win", "loss", "joined", "abandoned"],
+          "maxLength": 16
+        },
+        "netChange": {
+          "type": "integer"
+        },
+        "winnerName": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "playerCount": {
+          "type": "integer"
+        },
+        "opponents": {
+          "type": "array"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "uid",
+        "roomCode",
+        "mode",
+        "role",
+        "myColor",
+        "stake",
+        "wagerPot",
+        "outcome",
+        "netChange",
+        "winnerName",
+        "playerCount",
+        "opponents",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "WalletTransactionRecord": {
+      "title": "WalletTransactionRecord",
+      "description": "Ledger entry for wallet balance changes (stakes, pot wins, shop unlocks, coin buy/sell, admin adjustments).",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "txType": {
+          "type": "string",
+          "enum": [
+            "stake_debit",
+            "pot_win",
+            "shop_purchase",
+            "topup",
+            "daily_bonus",
+            "initial_grant",
+            "coin_buy",
+            "coin_sell",
+            "coin_refund",
+            "admin_adjust"
+          ],
+          "maxLength": 24
+        },
+        "amount": {
+          "type": "integer"
+        },
+        "balanceAfter": {
+          "type": "integer"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "referenceCode": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "txType", "amount", "balanceAfter", "label", "referenceCode", "createdAt"]
+    },
+    "PublicPlayerStanding": {
+      "title": "PublicPlayerStanding",
+      "description": "Non-PII public leaderboard standing for authenticated players.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "photoURL": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "elo": {
+          "type": "integer"
+        },
+        "wins": {
+          "type": "integer"
+        },
+        "matchesPlayed": {
+          "type": "integer"
+        },
+        "earnings": {
+          "type": "integer"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "displayName", "photoURL", "elo", "wins", "matchesPlayed", "earnings", "updatedAt"]
+    },
+    "ShopOrder": {
+      "title": "ShopOrder",
+      "description": "Player coin buy or sell order managed through the Boutique and /admin console.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "orderType": {
+          "type": "string",
+          "enum": ["buy", "sell"],
+          "maxLength": 12
+        },
+        "coinsAmount": {
+          "type": "integer"
+        },
+        "fiatCents": {
+          "type": "integer"
+        },
+        "currency": {
+          "type": "string",
+          "enum": ["EUR", "USD", "XOF"],
+          "maxLength": 8
+        },
+        "paymentMethod": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "payoutDetails": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "completed", "rejected"],
+          "maxLength": 16
+        },
+        "adminNote": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "uid",
+        "displayName",
+        "orderType",
+        "coinsAmount",
+        "fiatCents",
+        "currency",
+        "paymentMethod",
+        "payoutDetails",
+        "status",
+        "adminNote",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "PlatformSettings": {
+      "title": "PlatformSettings",
+      "description": "Global platform configuration managed by admins.",
+      "type": "object",
+      "properties": {
+        "maintenanceMode": {
+          "type": "boolean"
+        },
+        "shopBuyEnabled": {
+          "type": "boolean"
+        },
+        "shopSellEnabled": {
+          "type": "boolean"
+        },
+        "instantBuyCredit": {
+          "type": "boolean"
+        },
+        "buyRatePer1000Cents": {
+          "type": "integer"
+        },
+        "sellRatePer1000Cents": {
+          "type": "integer"
+        },
+        "currency": {
+          "type": "string",
+          "enum": ["EUR", "USD", "XOF"],
+          "maxLength": 8
+        },
+        "minSellCoins": {
+          "type": "integer"
+        },
+        "dailyBonusCoins": {
+          "type": "integer"
+        },
+        "maxStake": {
+          "type": "integer"
+        },
+        "announcement": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "maintenanceMode",
+        "shopBuyEnabled",
+        "shopSellEnabled",
+        "instantBuyCredit",
+        "buyRatePer1000Cents",
+        "sellRatePer1000Cents",
+        "currency",
+        "minSellCoins",
+        "dailyBonusCoins",
+        "maxStake",
+        "announcement",
+        "updatedAt"
+      ]
+    },
+    "AdminUser": {
+      "title": "AdminUser",
+      "description": "Authorized platform administrator UID record.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "email", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private player profile, wallet balance, stats, and Shop loadout."
+    },
+    "/users/{userId}/tokenPurchases/{purchaseId}": {
+      "schema": { "$ref": "#/entities/TokenPurchaseRecord" },
+      "description": "History of token/skin unlocks and coin pack purchases."
+    },
+    "/users/{userId}/roomHistory/{historyId}": {
+      "schema": { "$ref": "#/entities/RoomParticipationRecord" },
+      "description": "History of online rooms and arena tables participated in."
+    },
+    "/users/{userId}/walletTransactions/{txId}": {
+      "schema": { "$ref": "#/entities/WalletTransactionRecord" },
+      "description": "Wallet ledger of debits, pot winnings, bonuses, buy/sell orders, and admin adjustments."
+    },
+    "/leaderboardPublic/{userId}": {
+      "schema": { "$ref": "#/entities/PublicPlayerStanding" },
+      "description": "Public non-PII leaderboard standings."
+    },
+    "/shopOrders/{orderId}": {
+      "schema": { "$ref": "#/entities/ShopOrder" },
+      "description": "Coin buy & sell orders created by players and processed by admins."
+    },
+    "/platformConfig/{configId}": {
+      "schema": { "$ref": "#/entities/PlatformSettings" },
+      "description": "Global platform configuration (rates, maintenance, bonus, announcement)."
+    },
+    "/admins/{userId}": {
+      "schema": { "$ref": "#/entities/AdminUser" },
+      "description": "Explicitly authorized platform administrators."
+    }
+  }
+}

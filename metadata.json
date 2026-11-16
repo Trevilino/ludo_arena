@@ -1,0 +1,6 @@
+{
+  "name": "Ludo Arena",
+  "description": "High-stakes competitive cyber-luxe online Ludo arena with tournaments, custom dice and token loadouts, and tactical board gameplay.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
